@@ -1,0 +1,19 @@
+# Node.js
+node_modules/
+
+# Next.js
+.next/
+
+# Local environment variables
+.env.local
+
+# Logs
+logs/
+*.log
+
+# Build output
+dist/
+build/
+
+# Switched to the default folder for TypeScript / JavaScript build scripts
+out/
