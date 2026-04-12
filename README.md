@@ -1,38 +1,44 @@
-# Media Startup Platform Documentation
+# Media Startup Platform
 
-## Tech Stack
-- **Frontend:** ReactJS, Redux
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB
-- **Hosting:** AWS (Amazon Web Services)
-- **Version Control:** Git, GitHub
+A Next.js 14 media platform starter with Supabase-backed APIs and NextAuth authentication.
 
-## Features
-- User Authentication: Users can create accounts and log in securely.
-- Media Upload: Users can upload various types of media (images, videos, etc.).
-- Media Management: Users can manage their uploaded media, including editing and deleting.
-- Search Functionality: Users can search for media based on keywords and tags.
+## Local Development
 
-## Deployment Instructions
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/themoonr4/J.git
-   cd J
-   ```
-2. Install the dependencies:
+1. Install dependencies:
+
    ```bash
    npm install
    ```
-3. Set up environment variables:
-   Create a `.env` file in the root directory and configure the necessary environment variables.
-4. Run the application:
-   ```bash
-   npm start
-   ```
-5. Access the application at `http://localhost:3000`
 
-## Growth Roadmap
-- **Q1 2026:** Launch the platform and onboard early users.
-- **Q2 2026:** Implement user feedback and improve user experience.
-- **Q3 2026:** Introduce new features such as advanced search filters and media analytics.
-- **Q4 2026:** Expand marketing efforts to reach a wider audience and increase user engagement.
+2. Add environment variables to `.env.local`:
+
+   ```bash
+   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_SECRET=your_nextauth_secret
+   SUPABASE_URL=https://your_supabase_url
+   SUPABASE_ANON_KEY=your_supabase_anon_key
+   GOOGLE_CLIENT_ID=your_google_client_id
+   GOOGLE_CLIENT_SECRET=your_google_client_secret
+   ```
+
+3. Start the dev server:
+
+   ```bash
+   npm run dev
+   ```
+
+## Publish (Vercel)
+
+1. Push this repository to GitHub.
+2. Import the project in Vercel.
+3. In Vercel Project Settings → Environment Variables, set all variables from `.env.local`.
+4. Deploy (Production branch: usually `main`).
+
+Vercel will run `npm run build` using the included `vercel.json` settings.
+
+## Production Check (before deploying)
+
+```bash
+npm run build
+npm run start
+```
